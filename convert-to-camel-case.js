@@ -1,14 +1,6 @@
 function convertToCamelCase (t) {
-let text = t.split("");
-let result = "";
-for (let i=0;i<text.length;i++) {
-    if (text[i] === "-"){
-    result+=text[i+1].toUpperCase();
-    i++;}
-    else result+=text[i]; 
-}
-  
-return result; 
+return text = t.split("-").map ((word,index)=> 
+index===0 ? word:word[0].toUpperCase() +word.slice(1)).join("");
 }
 
 console.log(convertToCamelCase("the-stealth-warrior")); // вернет "theStealthWarrior"
